@@ -64,6 +64,12 @@ def validate_plane(points):
         if distance(a1, a2) > distance(b, c):
             raise ValueError("Invalid trapezoid dimensions")
 
+        base1 = a2 - a1
+        base2 = c - b
+
+        if np.linalg.norm(np.cross(base1, base2)) > eps * np.linalg.norm(base1) * np.linalg.norm(base2):
+            raise ValueError("Trapezoid bases must be parallel")
+
         normal = np.cross(a2 - a1, b - a1)
         if np.linalg.norm(normal) < 1e-10:
             raise ValueError("Degenerate trapezoid")
