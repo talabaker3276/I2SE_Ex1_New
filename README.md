@@ -24,3 +24,31 @@ The required minimum is 30 FPS, with a target of 100 FPS.
 
 ## Project Goal
 Develop a correct, robust, and efficient plane projection algorithm with documented design, testing, and experimental results.
+
+
+## Project Scope and Documentation
+
+The project reads a 3D NRRD volume and a CSV file containing
+plane definitions, then generates an MP4 video with one frame
+per plane, preserving the CSV order.
+
+### Example Execution
+
+```bash
+python3 Ex0.py MRHead_1.nrrd planes.csv output.mp4
+```
+
+### Project Documents
+
+- [Software Requirements](SRS.md)
+- [Algorithm Design](ALGORITHM.md)
+- [Testing Strategy](TESTING.md)
+- [Experiment Results](results.md)
+
+### Performance Verification
+
+The current experiment uses 11 plane definitions and
+successfully generates 11 video frames.
+
+The measured projection FPS does not include video encoding.
+Performance on a 500x500x500 volume has not yet been verified.
