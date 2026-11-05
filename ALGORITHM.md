@@ -73,3 +73,35 @@ but excludes MP4 video encoding.
 
 The current experiment does not verify performance on a
 500x500x500 volume.
+
+
+## 6. Test Execution Status
+
+| Test | Status | Notes |
+|---|---|---|
+| Load valid NRRD | Passed | MRHead_1.nrrd loaded successfully |
+| Valid 3-point planes | Passed (demo) | 10 planes processed |
+| Valid 4-point plane | Passed (demo) | 1 plane processed |
+| Invalid plane definitions | Not yet tested | Requires negative test cases |
+| Out-of-bounds coordinates | Not yet tested | Requires boundary tests |
+| Image dimensions and pixel values | Not yet verified | Requires comparison with expected values |
+| Video frame count | Passed | 11 frames generated |
+| Video frame order | Not yet verified | Requires frame-by-frame comparison |
+| Performance on 500x500x500 | Not yet tested | Required benchmark |
+
+## 7. Demo Execution
+
+Command:
+
+`python3 Ex0.py MRHead_1.nrrd planes.csv output.mp4`
+
+Latest observed results:
+
+- Projection time: 0.0074 seconds
+- Projection FPS: 1490.41
+- Total frames: 11
+- MP4 video generated successfully
+
+The FPS measurement excludes video encoding.
+The reported FPS is specific to this experiment and
+does not establish performance on a 500x500x500 volume.
