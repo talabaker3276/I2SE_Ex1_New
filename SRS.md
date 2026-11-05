@@ -28,3 +28,18 @@ Develop an efficient Python application that extracts 2D plane projections from 
 ```bash
 python Ex0.py file.nrrd file.csv file.mp4
 ```
+
+
+## 6. Input Validation and Error Handling
+
+- Validate that each CSV row contains exactly 9 or 12 numeric values.
+- Verify that 3-point planes form valid isosceles triangles.
+- Verify that 4-point planes form valid isosceles trapezoids with parallel bases, equal-length sides, and coplanar points.
+- Reject invalid plane definitions with a clear error message.
+- Reject input volumes that are not three-dimensional.
+
+## 7. Performance Verification
+
+The implementation should achieve at least 30 FPS, with a target of 100 FPS on a 500x500x500 byte volume.
+
+The current experiment demonstrates successful execution on the provided MRI dataset. Performance on a 500x500x500 volume has not yet been verified.
